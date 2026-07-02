@@ -23,10 +23,8 @@ export default function LoginForm({ onLogin, error }: Props) {
       <div className="absolute top-[-20%] left-[-10%] w-[140%] h-[140%] bg-primary/20 blur-[100px] rounded-full pointer-events-none -z-10"></div>
       
       <div className="mb-8 text-center animate-slide-up">
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-indigo-600 flex items-center justify-center mx-auto mb-4 shadow-[0_0_30px_rgba(124,58,237,0.3)]">
-          <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
+        <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <img src="/icons/icon.svg" alt="DocSense Logo" className="w-16 h-16" />
         </div>
         <h1 className="text-2xl font-bold mb-1 tracking-tight">Welcome Back</h1>
         <p className="text-slate-400 text-sm">Login to your DocSense account</p>
