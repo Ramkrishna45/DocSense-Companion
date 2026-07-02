@@ -83,7 +83,7 @@ html, body, #root {
   @apply w-full rounded-lg px-3 py-2 text-sm text-[#0f172a] outline-none transition-all duration-200;
 }
 .input-field:focus {
-  @apply border-primary ring-2 ring-primary/20 bg-white;
+  @apply border-primary ring-2 ring-primary/20 bg-[#ffffff];
 }
 
 /* Buttons */
