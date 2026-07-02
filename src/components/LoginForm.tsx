@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import iconLogo from '../assets/icon.svg';
 
 interface Props {
   onLogin: (email: string, pass: string) => Promise<boolean>;
@@ -24,7 +25,7 @@ export default function LoginForm({ onLogin, error }: Props) {
       
       <div className="mb-8 text-center animate-slide-up">
         <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <img src="/icons/icon.svg" alt="DocSense Logo" className="w-16 h-16" />
+          <img src={iconLogo} alt="DocSense Logo" className="w-16 h-16" />
         </div>
         <h1 className="text-2xl font-bold mb-1 tracking-tight">Welcome Back</h1>
         <p className="text-slate-400 text-sm">Login to your DocSense account</p>

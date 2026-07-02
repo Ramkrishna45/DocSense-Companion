@@ -8,6 +8,8 @@ import TabBar from '../components/TabBar';
 
 type Tab = 'save' | 'search' | 'settings';
 
+import extensionLogo from '../assets/extension_logo.svg';
+
 export default function App() {
   const { user, isLoading, login, logout, error } = useAuth();
   const [activeTab, setActiveTab] = useState<Tab>('save');
@@ -32,7 +34,7 @@ export default function App() {
       {/* Header */}
       <header className="glass px-4 py-3 flex items-center justify-between z-10 border-b border-white/5">
         <div className="flex items-center gap-2">
-          <img src="/extension_logo.svg" alt="DocSense Companion" className="h-6" />
+          <img src={extensionLogo} alt="DocSense Companion" className="h-6" />
         </div>
         <div className="flex items-center gap-3 text-sm">
           <div className="flex items-center gap-1.5">
