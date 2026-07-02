@@ -33,8 +33,8 @@ export default function App() {
     <div className="flex flex-col h-screen animate-fade-in">
       {/* Header */}
       <header className="glass px-4 py-3 flex items-center justify-between z-10 border-b border-white/5">
-        <div className="flex items-center h-8 overflow-visible pointer-events-none">
-          <img src={extensionLogo} alt="DocSense Companion" className="w-[200px] max-w-none h-auto object-contain -ml-6 mt-1" />
+        <div className="flex items-center gap-2">
+          <img src={extensionLogo} alt="DocSense Companion" className="h-6 w-auto object-contain" />
         </div>
         <div className="flex items-center gap-3 text-sm">
           <div className="flex items-center gap-1.5">
