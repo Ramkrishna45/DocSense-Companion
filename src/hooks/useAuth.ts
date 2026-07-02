@@ -10,9 +10,19 @@ export function useAuth() {
   useEffect(() => {
     async function checkAuth() {
       try {
+        // Optimistically load cached user to prevent Render cold starts from blocking the UI
+        const cachedUser = await auth.getUser();
+        if (cachedUser) {
+          setUser(cachedUser);
+          setIsLoading(false);
+        }
+
+        // Initialize and validate token in the background (or foreground if no cache)
         await auth.initialize();
-        const currentUser = await auth.getUser();
-        setUser(currentUser);
+        
+        // Update with fresh user (will be null if token was invalid and they were logged out)
+        const freshUser = await auth.getUser();
+        setUser(freshUser);
       } catch (err) {
         console.error('Auth initialization error:', err);
       } finally {
