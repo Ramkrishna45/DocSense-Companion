@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="src/assets/extension_logo.svg" alt="DocSense Companion Logo" width="280" />
+  <img src="src/assets/readme_logo.svg" alt="DocSense Companion Logo" width="280" />
 
   <h1 style="margin-top: 20px;">DocSense Companion</h1>
 
