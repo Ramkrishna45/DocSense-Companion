@@ -23,9 +23,9 @@ export default function LoginForm({ onLogin, error }: Props) {
       {/* Background decoration */}
       <div className="absolute top-[-20%] left-[-10%] w-[140%] h-[140%] bg-primary/20 blur-[100px] rounded-full pointer-events-none -z-10"></div>
       
-      <div className="mb-8 text-center animate-slide-up mt-8">
-        <div className="flex items-center justify-center mb-6">
-          <img src={extensionLogo} alt="DocSense Logo" className="w-64 h-auto object-contain" />
+      <div className="mb-6 text-center animate-slide-up mt-4">
+        <div className="flex items-center justify-center -mb-24 -mt-16 relative z-0 pointer-events-none">
+          <img src={extensionLogo} alt="DocSense Logo" className="w-80 h-auto object-contain" />
         </div>
         <h1 className="text-2xl font-bold mb-1 tracking-tight">Welcome Back</h1>
         <p className="text-slate-400 text-sm">Login to your DocSense account</p>
