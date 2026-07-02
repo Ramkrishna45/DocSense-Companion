@@ -8,7 +8,7 @@ import TabBar from '../components/TabBar';
 
 type Tab = 'save' | 'search' | 'settings';
 
-import extensionLogo from '../assets/extension_logo_cropped.png';
+import extensionLogo from '../assets/extension_logo.svg';
 
 export default function App() {
   const { user, isLoading, login, logout, error } = useAuth();

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import extensionLogo from '../assets/extension_logo_cropped.png';
+import extensionLogo from '../assets/extension_logo.svg';
 
 interface Props {
   onLogin: (email: string, pass: string) => Promise<boolean>;
