@@ -23,7 +23,7 @@ export default function LoginForm({ onLogin, error }: Props) {
       
       <div className="mb-6 text-center animate-slide-up mt-8">
         <div className="flex items-center justify-center mb-6">
-          <img src={extensionLogo} alt="DocSense Logo" className="w-56 h-auto object-contain" />
+          <img src={extensionLogo} alt="DocSense Logo" className="w-[280px] h-auto object-contain" />
         </div>
         <h1 className="text-2xl font-bold mb-1 tracking-tight">Welcome Back</h1>
         <p className="text-slate-400 text-sm">Login to your DocSense account</p>
