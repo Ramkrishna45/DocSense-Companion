@@ -8,7 +8,7 @@ import TabBar from '../components/TabBar';
 
 type Tab = 'save' | 'search' | 'settings';
 
-import extensionLogo from '../assets/extension_logo.svg';
+import extensionLogo from '../assets/extension_logo_cropped.png';
 
 export default function App() {
   const { user, isLoading, login, logout, error } = useAuth();
@@ -32,9 +32,9 @@ export default function App() {
   return (
     <div className="flex flex-col h-screen animate-fade-in">
       {/* Header */}
-      <header className="glass px-4 flex items-center justify-between z-10 border-b border-black/5 h-14">
-        <div className="w-36 h-full overflow-hidden flex items-center justify-center relative">
-          <img src={extensionLogo} alt="DocSense Companion" className="w-[280px] max-w-none h-auto object-contain absolute" />
+      <header className="glass px-4 py-3 flex items-center justify-between z-10 border-b border-black/5">
+        <div className="flex items-center gap-2">
+          <img src={extensionLogo} alt="DocSense Companion" className="h-8 w-auto object-contain" />
         </div>
         <div className="flex items-center gap-3 text-sm">
           <div className="flex items-center gap-1.5">

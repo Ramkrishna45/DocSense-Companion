@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import extensionLogo from '../assets/extension_logo.svg';
+import extensionLogo from '../assets/extension_logo_cropped.png';
 
 interface Props {
   onLogin: (email: string, pass: string) => Promise<boolean>;
@@ -23,9 +23,9 @@ export default function LoginForm({ onLogin, error }: Props) {
       {/* Background decoration */}
       <div className="absolute top-[-20%] left-[-10%] w-[140%] h-[140%] bg-primary/20 blur-[100px] rounded-full pointer-events-none -z-10"></div>
       
-      <div className="mb-6 text-center animate-slide-up mt-4">
-        <div className="w-64 h-24 overflow-hidden flex items-center justify-center mx-auto relative mb-4">
-          <img src={extensionLogo} alt="DocSense Logo" className="w-[450px] max-w-none h-auto object-contain absolute" />
+      <div className="mb-6 text-center animate-slide-up mt-8">
+        <div className="flex items-center justify-center mb-6">
+          <img src={extensionLogo} alt="DocSense Logo" className="w-56 h-auto object-contain" />
         </div>
         <h1 className="text-2xl font-bold mb-1 tracking-tight">Welcome Back</h1>
         <p className="text-slate-400 text-sm">Login to your DocSense account</p>

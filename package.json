@@ -12,6 +12,7 @@
     "build:content": "npx esbuild src/content/index.ts --bundle --outfile=dist/content.js --format=iife --target=esnext"
   },
   "dependencies": {
+    "jimp": "^1.6.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
