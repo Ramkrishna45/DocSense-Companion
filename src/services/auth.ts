@@ -1,12 +1,11 @@
 import { api } from './api';
 import { storage } from './storage';
-import { STORAGE_KEYS } from '../utils/constants';
+import { STORAGE_KEYS, DEFAULT_BACKEND_URL } from '../utils/constants';
 import type { User } from '../types';
 
 export const auth = {
   async initialize(): Promise<void> {
-    const settings = await storage.getSettings();
-    api.setBaseUrl(settings.backendUrl);
+    api.setBaseUrl(DEFAULT_BACKEND_URL);
 
     const token = await storage.get<string>(STORAGE_KEYS.AUTH_TOKEN);
     if (token) {

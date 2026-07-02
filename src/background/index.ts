@@ -1,4 +1,4 @@
-import { MESSAGE_TYPES } from '../utils/constants';
+import { MESSAGE_TYPES, DEFAULT_DASHBOARD_URL } from '../utils/constants';
 import { api } from '../services/api';
 import { auth } from '../services/auth';
 import { storage } from '../services/storage';
@@ -148,7 +148,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     handleSaveSelection(tab.id);
   } else if (info.menuItemId === 'open-dashboard') {
     storage.getSettings().then(settings => {
-      chrome.tabs.create({ url: settings.dashboardUrl || 'http://localhost:3000' });
+      chrome.tabs.create({ url: DEFAULT_DASHBOARD_URL });
     });
   }
 });

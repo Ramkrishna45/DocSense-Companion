@@ -1,24 +1,19 @@
 import { useState, useEffect } from 'react';
 import { storage } from '../services/storage';
-import { DASHBOARD_URL } from '../utils/constants';
+import { DEFAULT_DASHBOARD_URL } from '../utils/constants';
 import type { RecentSave } from '../types';
 
 export default function RecentSaves() {
   const [saves, setSaves] = useState<RecentSave[]>([]);
-  const [dashboardUrl, setDashboardUrl] = useState<string>('http://localhost:3000');
 
   useEffect(() => {
     // Initial load
     storage.getRecentSaves().then(setSaves);
-    storage.getSettings().then(settings => setDashboardUrl(settings.dashboardUrl));
     
     // Listen for changes from background
     const handleStorageChange = (changes: any) => {
       if (changes.docsense_recent_saves) {
         setSaves(changes.docsense_recent_saves.newValue || []);
-      }
-      if (changes.docsense_settings) {
-        setDashboardUrl(changes.docsense_settings.newValue?.dashboardUrl || 'http://localhost:3000');
       }
     };
     chrome.storage.onChanged.addListener(handleStorageChange);
@@ -38,7 +33,7 @@ export default function RecentSaves() {
       <div className="flex items-center justify-between mb-2 px-1">
         <h3 className="text-xs font-semibold text-slate-300 uppercase tracking-wider">Recent Captures</h3>
         <a 
-          href={dashboardUrl} 
+          href={DEFAULT_DASHBOARD_URL} 
           target="_blank" 
           rel="noreferrer"
           className="text-xs text-primary hover:text-indigo-400 transition-colors"
@@ -59,7 +54,7 @@ export default function RecentSaves() {
           saves.map(save => (
             <div key={save.id} className="glass rounded-lg p-2.5 flex flex-col gap-1 hover:bg-white/5 transition-colors group">
               <a 
-                href={`${dashboardUrl}/document/${save.id}`} 
+                href={`${DEFAULT_DASHBOARD_URL}/document/${save.id}`} 
                 target="_blank" 
                 rel="noreferrer"
                 className="font-medium text-sm text-slate-200 line-clamp-1 group-hover:text-primary transition-colors"

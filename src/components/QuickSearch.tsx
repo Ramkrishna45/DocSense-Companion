@@ -1,27 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSearch } from '../hooks/useSearch';
-import { storage } from '../services/storage';
+import { DEFAULT_DASHBOARD_URL } from '../utils/constants';
 
 export default function QuickSearch() {
   const [query, setQuery] = useState('');
-  const [dashboardUrl, setDashboardUrl] = useState<string>('http://localhost:3000');
-
-  useEffect(() => {
-    storage.getSettings().then(settings => setDashboardUrl(settings.dashboardUrl));
-    const handleStorageChange = (changes: any) => {
-      if (changes.docsense_settings) {
-        setDashboardUrl(changes.docsense_settings.newValue?.dashboardUrl || 'http://localhost:3000');
-      }
-    };
-    chrome.storage.onChanged.addListener(handleStorageChange);
-    return () => chrome.storage.onChanged.removeListener(handleStorageChange);
-  }, []);
   const { results, isSearching } = useSearch(query);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      window.open(`${dashboardUrl}/search?q=${encodeURIComponent(query)}`, '_blank');
+      window.open(`${DEFAULT_DASHBOARD_URL}/search?q=${encodeURIComponent(query)}`, '_blank');
     }
   };
 
@@ -33,7 +21,8 @@ export default function QuickSearch() {
         </svg>
         <input
           type="text"
-          className="input-field pl-9 h-10 w-full bg-black/20"
+          className="input-field h-10 w-full bg-black/5"
+          style={{ paddingLeft: '36px' }}
           placeholder="Semantic search across your knowledge base..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -81,7 +70,7 @@ export default function QuickSearch() {
             {results.results.map((result) => (
               <a 
                 key={result.document.id}
-                href={`${dashboardUrl}/document/${result.document.id}`}
+                href={`${DEFAULT_DASHBOARD_URL}/document/${result.document.id}`}
                 target="_blank"
                 rel="noreferrer"
                 className="block glass-card p-3 hover:bg-white/5 transition-colors group relative overflow-hidden"

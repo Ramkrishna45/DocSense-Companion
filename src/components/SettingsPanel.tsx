@@ -46,9 +46,9 @@ export default function SettingsPanel({ onLogout }: Props) {
           </div>
           <button 
             onClick={handleToggleFloating}
-            className={`w-10 h-5 rounded-full relative transition-colors duration-200 ${settings.floatingButton ? 'bg-primary' : 'bg-white/10'}`}
+            className={`w-10 h-5 rounded-full relative transition-colors duration-200 ${settings.floatingButton ? 'bg-primary' : 'bg-slate-300'}`}
           >
-            <div className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full transition-transform duration-200 ${settings.floatingButton ? 'translate-x-5' : ''}`} />
+            <div className={`absolute top-0.5 left-0.5 w-4 h-4 bg-[#ffffff] rounded-full transition-transform duration-200 shadow-sm ${settings.floatingButton ? 'translate-x-5' : ''}`} />
           </button>
         </div>
         
