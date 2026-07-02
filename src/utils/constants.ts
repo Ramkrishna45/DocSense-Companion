@@ -7,8 +7,11 @@ import type { ExtensionSettings } from '../types';
 /** Production backend URL */
 export const DEFAULT_BACKEND_URL = 'https://docsense-ai-g6s4.onrender.com';
 
+/** Production frontend URL */
+export const DEFAULT_FRONTEND_URL = 'https://docsense-ai-mu.vercel.app';
+
 /** Default Dashboard URL */
-export const DEFAULT_DASHBOARD_URL = 'http://localhost:3000';
+export const DEFAULT_DASHBOARD_URL = 'https://docsense-ai-mu.vercel.app';
 
 // ====== Storage Keys ======
 

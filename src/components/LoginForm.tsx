@@ -20,8 +20,6 @@ export default function LoginForm({ onLogin, error }: Props) {
 
   return (
     <div className="flex-1 flex flex-col items-center justify-center p-6 h-screen animate-fade-in relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-[-20%] left-[-10%] w-[140%] h-[140%] bg-primary/20 blur-[100px] rounded-full pointer-events-none -z-10"></div>
       
       <div className="mb-6 text-center animate-slide-up mt-8">
         <div className="flex items-center justify-center mb-6">
@@ -72,6 +70,17 @@ export default function LoginForm({ onLogin, error }: Props) {
               'Sign In'
             )}
           </button>
+          
+          <div className="text-center mt-4">
+            <a 
+              href="https://docsense-ai-mu.vercel.app/register" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-xs text-primary hover:text-indigo-600 transition-colors font-medium"
+            >
+              Don't have an account? Create one
+            </a>
+          </div>
         </div>
       </form>
     </div>

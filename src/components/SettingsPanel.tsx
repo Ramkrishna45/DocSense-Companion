@@ -53,42 +53,6 @@ export default function SettingsPanel({ onLogout }: Props) {
         </div>
         
         <div className="p-4 flex flex-col items-start">
-          <div className="font-medium text-sm text-slate-200 mb-2">Backend API URL</div>
-          <div className="text-xs text-slate-400 mb-2">Point to local or production server (FastAPI)</div>
-          <input
-            type="text"
-            className="input-field text-xs h-8 bg-black/20"
-            value={settings.backendUrl}
-            onChange={(e) => {
-              const val = e.target.value;
-              setSettings({ ...settings, backendUrl: val });
-            }}
-            onBlur={async () => {
-              await storage.updateSettings({ backendUrl: settings.backendUrl });
-              // Force reload so auth initializes with new URL
-              window.location.reload();
-            }}
-          />
-        </div>
-
-        <div className="p-4 flex flex-col items-start">
-          <div className="font-medium text-sm text-slate-200 mb-2">Dashboard URL</div>
-          <div className="text-xs text-slate-400 mb-2">Point to your frontend dashboard (Next.js)</div>
-          <input
-            type="text"
-            className="input-field text-xs h-8 bg-black/20"
-            value={settings.dashboardUrl || ''}
-            onChange={(e) => {
-              const val = e.target.value;
-              setSettings({ ...settings, dashboardUrl: val });
-            }}
-            onBlur={async () => {
-              await storage.updateSettings({ dashboardUrl: settings.dashboardUrl });
-            }}
-          />
-        </div>
-        
-        <div className="p-4 flex flex-col items-start">
           <div className="font-medium text-sm text-slate-200 mb-2">Keyboard Shortcuts</div>
           <div className="text-xs text-slate-400 flex items-center gap-2">
             <span>Save current page:</span>
